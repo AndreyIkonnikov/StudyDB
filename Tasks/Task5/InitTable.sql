@@ -1,0 +1,89 @@
+USE HumanResourcesDepartment;
+
+
+CREATE TABLE Position (
+    PositionID INT PRIMARY KEY IDENTITY(1,1),
+    [Name] VARCHAR(255) NOT NULL,
+    Salary INT NOT NULL,
+);
+
+CREATE TABLE Rate (
+    RateID INT PRIMARY KEY IDENTITY(1,1),
+    [Coefficient] FLOAT NOT NULL,
+);
+
+CREATE TABLE Unit (
+    UnitID INT PRIMARY KEY IDENTITY(1,1),
+    [Name] VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE Gender (
+    GenderID INT PRIMARY KEY IDENTITY(1,1),
+    [Name] VARCHAR(255) NOT NULL,
+);
+
+
+CREATE TABLE WorkContract (
+    WorkContractID INT PRIMARY KEY IDENTITY(1,1),
+	PositionID INT NOT NULL,
+	FOREIGN KEY (PositionID) REFERENCES Position (PositionID),
+	RateID INT NOT NULL,
+	FOREIGN KEY (RateID) REFERENCES Rate (RateID),
+	BeginDate DATE NOT NULL,
+);
+
+
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY IDENTITY(1,1),
+    FirstName VARCHAR(255) NOT NULL,
+	SurName VARCHAR(255) NOT NULL,
+	SecondName VARCHAR(255) NOT NULL,
+	Birthday DATE NOT NULL,
+	HomeAddress VARCHAR(255) NOT NULL,
+	TelephoneNumber VARCHAR(255) NOT NULL,
+	Passport VARCHAR(255) NOT NULL,
+	Pensioner BIT NOT NULL,
+	WorkContractID INT NOT NULL,
+	FOREIGN KEY (WorkContractID) REFERENCES WorkContract (WorkContractID),
+	UnitID INT NOT NULL,
+	FOREIGN KEY (UnitID) REFERENCES Unit (UnitID),
+	GenderID INT NOT NULL,
+	FOREIGN KEY (GenderID) REFERENCES Gender (GenderID),
+
+);
+
+CREATE TABLE PastWork (
+    PastWorkID INT PRIMARY KEY IDENTITY(1,1),
+    [Name] VARCHAR(255) NOT NULL,
+	Position VARCHAR(255) NOT NULL,
+	BeginDate DATE NOT NULL,
+	EndDate DATE NOT NULL,
+	EmployeeID INT NOT NULL,
+	FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
+);
+
+CREATE TABLE Kid (
+    KidID INT PRIMARY KEY IDENTITY(1,1),
+    FirstName VARCHAR(255) NOT NULL,
+	SurName VARCHAR(255) NOT NULL,
+	SecondName VARCHAR(255) NOT NULL,
+	EmployeeID INT NOT NULL,
+	FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
+	GenderID INT NOT NULL,
+	FOREIGN KEY (GenderID) REFERENCES Gender (GenderID),
+);
+
+CREATE TABLE VacationReason (
+    VacationReasonID INT PRIMARY KEY IDENTITY(1,1),
+    Reason VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE Vacation (
+    VacationID INT PRIMARY KEY IDENTITY(1,1),
+    BeginDate DATE NOT NULL,
+	EndDate DATE NOT NULL,
+	EmployeeID INT NOT NULL,
+	FOREIGN KEY (EmployeeID) REFERENCES Employee (EmployeeID),
+	VacationReasonID INT NOT NULL,
+	FOREIGN KEY (VacationReasonID) REFERENCES VacationReason (VacationReasonID),
+);
