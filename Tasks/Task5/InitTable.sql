@@ -49,7 +49,6 @@ CREATE TABLE Employee (
 	FOREIGN KEY (UnitID) REFERENCES Unit (UnitID),
 	GenderID INT NOT NULL,
 	FOREIGN KEY (GenderID) REFERENCES Gender (GenderID),
-
 );
 
 CREATE TABLE PastWork (
