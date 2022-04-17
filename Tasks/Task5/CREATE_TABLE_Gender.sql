@@ -1,0 +1,10 @@
+USE HumanResourcesDepartment;
+
+CREATE TABLE Gender (
+    ID UNIQUEIDENTIFIER DEFAULT NEWID()
+	CONSTRAINT PK_Gender PRIMARY KEY,
+    [Name] VARCHAR(255) NOT NULL,
+);
+
+ALTER TABLE Gender
+ADD CONSTRAINT u_GenderName UNIQUE([Name]);
