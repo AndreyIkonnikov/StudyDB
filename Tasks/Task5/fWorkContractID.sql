@@ -1,0 +1,10 @@
+CREATE FUNCTION dbo.fWorkContractID
+(
+	@ContractUI VARCHAR(255)
+)
+RETURNS UNIQUEIDENTIFIER
+AS
+BEGIN
+	DECLARE @ID_WorkContract UNIQUEIDENTIFIER = (SELECT TOP 1 ID FROM WorkContract WHERE ContractUI = @ContractUI);
+	RETURN @ID_WorkContract;
+END;

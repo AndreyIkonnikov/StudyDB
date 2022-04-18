@@ -1,0 +1,10 @@
+CREATE FUNCTION dbo.fEmployeeID
+(
+	@EmployeePassport VARCHAR(255)
+)
+RETURNS UNIQUEIDENTIFIER
+AS
+BEGIN
+	DECLARE @ID_Employee UNIQUEIDENTIFIER = (SELECT TOP 1 ID FROM Employee WHERE Passport = @EmployeePassport);
+	RETURN @ID_Employee;
+END;

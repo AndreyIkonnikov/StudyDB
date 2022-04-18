@@ -139,11 +139,53 @@
           <AssociatedConnUserName />
           <FullPath>CREATE_TABLE_WorkContract.sql</FullPath>
         </FileNode>
+        <FileNode Name="fEmployeeID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fEmployeeID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fGenderID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fGenderID.sql</FullPath>
+        </FileNode>
         <FileNode Name="fOldestPensionerEmployeeFirstName.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>fOldestPensionerEmployeeFirstName.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fPositionID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fPositionID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fRateID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fRateID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fUnitID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fUnitID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fVacationReasonID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fVacationReasonID.sql</FullPath>
+        </FileNode>
+        <FileNode Name="fWorkContractID.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>fWorkContractID.sql</FullPath>
         </FileNode>
         <FileNode Name="InitDB.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
@@ -163,11 +205,65 @@
           <AssociatedConnUserName />
           <FullPath>InsertValues.sql</FullPath>
         </FileNode>
-        <FileNode Name="SQLQuery1.sql">
+        <FileNode Name="pEmployee.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
           <AssociatedConnUserName />
-          <FullPath>SQLQuery1.sql</FullPath>
+          <FullPath>pEmployee.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pGender.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pGender.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pKid.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pKid.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pPastWork.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pPastWork.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pPosition.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pPosition.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pRate.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pRate.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pUnit.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pUnit.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pVacation.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pVacation.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pVacationReason.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pVacationReason.sql</FullPath>
+        </FileNode>
+        <FileNode Name="pWorkContract.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:WIN-PCQNKG7616T\MSSQLSERVER01:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>WIN-PCQNKG7616T\MSSQLSERVER01</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>pWorkContract.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

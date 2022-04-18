@@ -1,67 +1,58 @@
+
 -- Insert Positions
-INSERT INTO Position VALUES (NEWID(), 'DevOps', '150000');
-INSERT INTO Position VALUES (NEWID(), 'Backend Developer', '200000');
-INSERT INTO Position VALUES (NEWID(), 'Frontend Developer', '180000');
+EXEC dbo.pPositionInsert 'DevOps', '150000'
+EXEC dbo.pPositionInsert 'Backend Developer', '200000'
+EXEC dbo.pPositionInsert 'Frontend Developer', '180000'
+
 
 -- Insert Rates
-INSERT INTO Rate VALUES (NEWID(), 0.25);
-INSERT INTO Rate VALUES (NEWID(), 0.5);
-INSERT INTO Rate VALUES (NEWID(), 0.75);
-INSERT INTO Rate VALUES (NEWID(), 1);
+EXEC dbo.pRateInsert 0.25
+EXEC dbo.pRateInsert 0.5
+EXEC dbo.pRateInsert 0.75
+EXEC dbo.pRateInsert 1
+
 
 -- Insert WorkContracts
-INSERT INTO WorkContract VALUES (NEWID(),
-(SELECT ID FROM Position WHERE [Name] = 'DevOps'),
-(SELECT ID FROM Rate WHERE [Coefficient] = 0.25),
-'1999-04-12');
-INSERT INTO WorkContract VALUES (NEWID(),
-(SELECT ID FROM Position WHERE [Name] = 'Backend Developer'),
-(SELECT ID FROM Rate WHERE [Coefficient] = 0.5),
-'2002-08-15');
-INSERT INTO WorkContract VALUES (NEWID(),
-(SELECT ID FROM Position WHERE [Name] = 'Frontend Developer'),
-(SELECT ID FROM Rate WHERE [Coefficient] = 0.75),
-'2002-05-29');
+EXEC dbo.pWorkContractInsert 'G9045J0J', 'DevOps', 0.25, '1999-04-12'
+EXEC dbo.pWorkContractInsert 'L9053434', 'Backend Developer', 0.5, '2002-08-15'
+EXEC dbo.pWorkContractInsert 'GERG34T9', 'Frontend Developer', 0.75, '2002-05-29'
+
 
 -- Insert Genders
-INSERT INTO Gender VALUES (NEWID(), 'Male');
-INSERT INTO Gender VALUES (NEWID(), 'Female');
+EXEC dbo.pGenderInsert 'Male'
+EXEC dbo.pGenderInsert 'Female'
+
 
 -- Insert Units
-INSERT INTO Unit VALUES (NEWID(), 'BigOS');
-INSERT INTO Unit VALUES (NEWID(), 'LittleOS');
+EXEC dbo.pUnitInsert 'BigOS'
+EXEC dbo.pUnitInsert 'LittleOS'
+
 
 -- Insert Employees
-INSERT INTO Employee VALUES (NEWID(), 'Andrey', 'Ivanovich', 'Prutko',
+EXEC dbo.pEmployeeInsert 'Andrey', 'Ivanovich', 'Prutko',
 '1970-03-03', 'Moskva, Pushika 43', '88187714',
-'1712 252037', 0 , (SELECT ID FROM WorkContract WHERE BeginDate = '1999-04-12'),
-(SELECT ID FROM Unit WHERE [Name] = 'BigOS'),
-(SELECT ID FROM Gender WHERE [Name] = 'Male'));
+'1712 252037', 0, 'G9045J0J','BigOS', 'Male'
 
-INSERT INTO Employee VALUES (NEWID(), 'Evgeniy', 'Petrovich', 'Tushin',
+EXEC dbo.pEmployeeInsert 'Evgeniy', 'Petrovich', 'Tushin',
 '1970-03-23', 'Moskva, Pushika 47', '88423423423',
-'1712 212332', 1 , (SELECT ID FROM WorkContract WHERE BeginDate = '2002-08-15'),
-(SELECT ID FROM Unit WHERE [Name] = 'LittleOS'),
-(SELECT ID FROM Gender WHERE [Name] = 'Male'));
+'1712 212332', 1, 'L9053434' , 'LittleOS', 'Male'
 
-INSERT INTO Employee VALUES (NEWID(), 'Valeriya', 'Mihaylovna', 'Horosheva',
+EXEC dbo.pEmployeeInsert 'Valeriya', 'Mihaylovna', 'Horosheva',
 '1970-03-23', 'Moskva, Kosmonavtov 47', '88424243242',
-'4332 252347', 0 , (SELECT ID FROM WorkContract WHERE BeginDate = '2002-05-29'),
-(SELECT ID FROM Unit WHERE [Name] = 'LittleOS'),
-(SELECT ID FROM Gender WHERE [Name] = 'Female'));
+'4332 252347', 0, 'GERG34T9', 'LittleOS', 'Female'
 
 -- Insert Kids
-INSERT INTO Kid VALUES (NEWID(), 'Sergey', 'Andreevich', 'Prutko', (SELECT ID FROM Employee WHERE FirstName = 'Andrey'), (SELECT ID FROM Gender WHERE [Name] = 'Male'));
-INSERT INTO Kid VALUES (NEWID(), 'Anya', 'Andreevna', 'Prutko', (SELECT ID FROM Employee WHERE FirstName = 'Andrey'), (SELECT ID FROM Gender WHERE [Name] = 'Female'));
+EXEC dbo.pKidInsert 'Sergey', 'Andreevich', 'Prutko', '1712 252037', 'Male'
+EXEC dbo.pKidInsert 'Anya', 'Andreevna', 'Prutko', '1712 252037', 'Female'
 
 -- Insert Past Works
-INSERT INTO PastWork VALUES (NEWID(), 'Yandex', 'SysAdmin', '1990-03-23','1999-03-02', (SELECT ID FROM Employee WHERE FirstName = 'Evgeniy'));
-INSERT INTO PastWork VALUES (NEWID(), 'MailRu', 'SysAdmin', '1999-03-03','1999-03-27', (SELECT ID FROM Employee WHERE FirstName = 'Valeriya'));
+EXEC dbo.pPastWorkInsert 'Yandex', 'SysAdmin', '1990-03-23','1999-03-02', '1712 212332'
+EXEC dbo.pPastWorkInsert 'MailRu', 'SysAdmin', '1999-03-03','1999-03-27', '4332 252347'
 
 -- Insert Vacation Reasons
-INSERT INTO VacationReason VALUES (NEWID(), 'Usual');
-INSERT INTO VacationReason VALUES (NEWID(), 'Baby Care');
+EXEC dbo.pVacationReasonInsert 'Usual'
+EXEC dbo.pVacationReasonInsert 'Baby Care'
 
 -- Insert Vacations
-INSERT INTO Vacation VALUES (NEWID(), '2002-03-19', '2005-03-19', (SELECT ID FROM Employee WHERE FirstName = 'Andrey'), (SELECT ID FROM VacationReason WHERE Reason = 'Usual'));
-INSERT INTO Vacation VALUES (NEWID(), '2003-09-01', '2003-09-28', (SELECT ID FROM Employee WHERE FirstName = 'Valeriya'), (SELECT ID FROM VacationReason WHERE Reason = 'Baby Care'));
+EXEC dbo.pVacationInsert '2002-03-19', '2005-03-19', '1712 252037', 'Usual'
+EXEC dbo.pVacationInsert '2003-09-01', '2003-09-28', '4332 252347', 'Baby Care'
