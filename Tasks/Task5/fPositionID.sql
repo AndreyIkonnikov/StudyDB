@@ -1,0 +1,10 @@
+CREATE FUNCTION dbo.fPositionID
+(
+	@PositionName VARCHAR(255)
+)
+RETURNS UNIQUEIDENTIFIER
+AS
+BEGIN
+	DECLARE @ID_Position UNIQUEIDENTIFIER = (SELECT TOP 1 ID FROM Position WHERE [Name] = @PositionName);
+	RETURN @ID_Position;
+END;

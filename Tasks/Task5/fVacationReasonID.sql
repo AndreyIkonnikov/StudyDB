@@ -1,0 +1,10 @@
+CREATE FUNCTION dbo.fVacationReasonID
+(
+	@Reason VARCHAR(255)
+)
+RETURNS UNIQUEIDENTIFIER
+AS
+BEGIN
+	DECLARE @ID_VacationReason UNIQUEIDENTIFIER = (SELECT TOP 1 ID FROM VacationReason WHERE Reason = @Reason);
+	RETURN @ID_VacationReason;
+END;
